@@ -27,6 +27,6 @@ func main() {
 		s.StartDeployment()
 
 		dbClient.Disconnect(dbContext)
-		time.Sleep(5 * time.Minute)
+		time.Sleep(10 * time.Minute)
 	}
 }
