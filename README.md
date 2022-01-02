@@ -8,13 +8,16 @@ The service will check a mongo db in the cloud every 5 mins for any deployments.
 
 
 ## Setup
-This is built to be called by a CRON job
+This is built to be a background process run every 5 mins
 
 
 ## Environment Variables
 
-MONGO_CONNECTION_STRING: Connection String to Database
+Arg 1: MONGO_CONNECTION_STRING: Connection String to Database
 
-MONGO_DATABASE: Name of Database
+Arg 2: MONGO_DATABASE: Name of Database
 
-MONGO_COLLECTION: Name of collection
+Arg 3: MONGO_COLLECTION: Name of collection
+
+## Example of deployment scripts
+https://github.com/horvatic/zracni-udar-service/tree/main/deploy/scripts
