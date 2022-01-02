@@ -5,3 +5,16 @@ The service will check a mongo db in the cloud every 5 mins for any deployments.
 - Clone the repo
 - Apply any custom commands
 - Deploy the service
+
+
+## Setup
+This is built to be called by a CRON job
+
+
+## Environment Variables
+
+MONGO_CONNECTION_STRING: Connection String to Database
+
+MONGO_DATABASE: Name of Database
+
+MONGO_COLLECTION: Name of collection
