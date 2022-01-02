@@ -21,3 +21,5 @@ Arg 3: MONGO_COLLECTION: Name of collection
 
 ## Example of deployment scripts
 https://github.com/horvatic/zracni-udar-service/tree/main/deploy/scripts
+
+https://github.com/horvatic/zracni-udar-ui/tree/main/deploy/scripts
