@@ -13,5 +13,5 @@ type Deployment struct {
 	TargetScript   string             `bson:"targetScript"`
 	GitSha         string             `bson:"gitSha"`
 	BranchName     string             `bson:"branchName"`
-        GitShortSha    string             `bson:"gitShortSha"`
+	GitShortSha    string             `bson:"gitShortSha"`
 }

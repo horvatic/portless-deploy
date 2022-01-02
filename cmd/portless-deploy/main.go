@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"time"
 
 	"github.com/horvatic/portless-deploy/pkg/service"
@@ -14,6 +15,11 @@ func main() {
 	connectionString := os.Args[1]
 	database := os.Args[2]
 	collection := os.Args[3]
+	sleepInMinutes, convertErr := strconv.Atoi(os.Args[4])
+	if convertErr != nil {
+		fmt.Println(convertErr.Error())
+		return
+	}
 
 	for {
 		store, dbClient, dbContext, err := store.BuildMongoDeploymentStore(connectionString, database, collection)
@@ -27,6 +33,6 @@ func main() {
 		s.StartDeployment()
 
 		dbClient.Disconnect(dbContext)
-		time.Sleep(10 * time.Minute)
+		time.Sleep(time.Duration(sleepInMinutes) * time.Minute)
 	}
 }

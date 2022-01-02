@@ -2,7 +2,6 @@ package store
 
 import (
 	"context"
-	"fmt"
 	"time"
 
 	"go.mongodb.org/mongo-driver/bson"
@@ -52,7 +51,6 @@ func (m *mongoDeploymentStore) GetAllDeployments() []model.Deployment {
 	deploymentsCollection := m.getDeploymentCollection()
 	cursor, err := deploymentsCollection.Find(m.context, bson.M{})
 	if err != nil {
-		fmt.Println(err)
 		return nil
 	}
 	var deployments []model.Deployment
@@ -60,7 +58,6 @@ func (m *mongoDeploymentStore) GetAllDeployments() []model.Deployment {
 	for cursor.Next(m.context) {
 		var deployment model.Deployment
 		if err = cursor.Decode(&deployment); err != nil {
-			fmt.Println(err)
 			return nil
 		}
 		deployments = append(deployments, deployment)
