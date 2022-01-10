@@ -15,6 +15,8 @@ Arg 2: DEPLOY_MONGO_DATABASE: Name of Database
 
 Arg 3: DEPLOY_MONGO_COLLECTION: Name of collection
 
+Arg 4: SLEEP_IN_SECOND: Sleep in seconds between polling
+
 ## Running
  `$ ./deploy "DEPLOY_MONGO_CONNECTION_STRING" "DEPLOY_MONGO_DATABASE" "DEPLOY_MONGO_COLLECTION" "5" &`
 
